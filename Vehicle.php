@@ -13,7 +13,7 @@ abstract class Vehicle
         $this->color = $color;
         $this->nbSeats = $nbSeats;
     }
-    abstract public function changeWheel();
+    //abstract public function changeWheel();
 
     public function forward(): string
     {

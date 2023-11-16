@@ -8,4 +8,11 @@ final class MotorWay extends HighWay
         $this->nbLane = 4;
         $this->maxSpeed = 130;
     }
+
+    public function addVehicle($vehicle)
+    {
+        if ($vehicle instanceof Car) {
+            $this->currentVehicles[] = $vehicle;
+        }
+    }
 }

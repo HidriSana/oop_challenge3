@@ -32,4 +32,5 @@ abstract class HighWay
     {
         $this->maxSpeed = $maxSpeed;
     }
+    
 }
