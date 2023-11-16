@@ -6,6 +6,7 @@ class Car extends Vehicle
 
     private string $energyType;
     private int $energyLevel;
+    private bool $hasParkBrake = false;
     //Methods
     public function __construct(string $color, int $nbSeats, string $energyType)
     {
@@ -35,5 +36,23 @@ class Car extends Vehicle
     public function setEnergyLevel(int $energyLevel): void
     {
         $this->energyLevel = $energyLevel;
+    }
+    public function setParkBrake($value)
+    {
+        $this->hasParkBrake = $value;
+    }
+    public function start()
+    {
+        try {
+            if ($this->hasParkBrake === true) {
+                throw new Exception("You can not start the vehicle while brakes are acive!");
+            }
+            echo 'La voiture démarre';
+        } catch (Exception $e) {
+            echo "Exception : " . $e->getMessage() . "</br>";
+            $this->setParkBrake(false);
+        } finally {
+            echo 'Ma voiture roule comme un donut';
+        }
     }
 }

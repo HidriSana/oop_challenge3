@@ -39,3 +39,9 @@ echo $motorWay->addVehicle($truck);
 echo $motorWay->addVehicle($skateboard);
 
 var_dump($motorWay->getCurrentVehicles());
+
+$car->setParkBrake(true);
+$car->start();
+
+$car->start();
+$car->start();
